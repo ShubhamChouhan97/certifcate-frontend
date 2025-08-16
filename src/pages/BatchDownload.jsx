@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { DownloadBatch } from '../API/downloadbatch.js'; // Adjust the import path as necessary
+import { DownloadBatch } from '../API/DownloadBatch'; // Adjust the import path as necessary
 const BatchForm = () => {
   const [name, setName] = useState('');
   const [batchId, setBatchId] = useState('');
