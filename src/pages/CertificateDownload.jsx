@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { DownloadCertificate } from '../API//DownloadCertificate.js'; // Adjust the import path as necessary
+import { DownloadCertificate } from '../API/DownloadCertificate.js'; // Adjust the import path as necessary
 const CertificateForm = () => {
   const [name, setName] = useState('');
   const [batchId, setBatchId] = useState('');

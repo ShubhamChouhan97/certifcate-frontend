@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { User, Mail, Lock } from "lucide-react";
 import { useNavigate } from 'react-router-dom';
-import "./signup.css"; // external CSS
+import "./SignUp.css"; // external CSS
 import  { registerUser } from "../API/register"; // API call to register user
 function SignUp({ }) {
 
