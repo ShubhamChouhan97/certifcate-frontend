@@ -6,7 +6,7 @@ import ProtectedRoute from "./component/ProtectedRoute";
 import Home from "./pages/Home";
 import BatchForm from "./pages/BatchDownload";
 import CertificateForm from "./pages/CertificateDownload";
-import Viewall from "./pages/viewall";
+import Viewall from "./pages/Viewall";
 
 function App() {
   return (

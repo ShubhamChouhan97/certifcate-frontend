@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './viewall.css'
 import { getbatch } from '../API/getbatch';
 import { getcertificate } from '../API/getCertificate';
-import { DownloadBatch } from '../API/Downloadbatch';
+import { DownloadBatch } from '../API/DownloadBatch';
 
 
 function Viewall() {
