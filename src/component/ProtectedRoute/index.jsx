@@ -9,27 +9,40 @@ const ProtectedRoute = () => {
 
   useEffect(() => {
     const verifyUser = async () => {
-    try {
-      const response = await axios.post(
-        `${API_URL}/auth/me`,
-        { message: "hi" }, // Body data
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-          withCredentials: true, // To send cookies
+      try {
+        const response = await axios.post(
+          `${API_URL}/auth/me`,
+          { message: "hi" }, // Body data
+          {
+            headers: {
+              "Content-Type": "application/json",
+            },
+            withCredentials: true, // To send cookies
+          }
+        );
+        if (response.data.user) {
+          setIsAuthenticated(true);
+        } else {
+          setIsAuthenticated(false);
         }
-      );
-      if (response.data.user) setIsAuthenticated(true);
-    } catch (error) {
+      } catch (error) {
         setIsAuthenticated(false);
       }
     };
+
     verifyUser();
   }, []);
 
-  if (isAuthenticated === null) return <div>Loading...</div>;
-  return isAuthenticated ? <Outlet /> : <Navigate to="/login" />;
+  if (isAuthenticated === null) {
+    // Loader while verifying auth
+    return (
+      <div className="flex items-center justify-center h-screen bg-gray-100">
+        <div className="w-12 h-12 border-4 border-blue-500 border-dashed rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  return isAuthenticated ? <Outlet /> : <Navigate to="/login" replace />;
 };
 
 export default ProtectedRoute;
