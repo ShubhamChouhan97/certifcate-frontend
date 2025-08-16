@@ -58,7 +58,7 @@ function Viewall() {
 
       const handleDownload = async (path, fileName) => {
         try {
-          const response = await fetch(`http://localhost:5000${path}`);
+          const response = await fetch(`https://certifcate-backend.onrender.com${path}`);
           const blob = await response.blob();
     
           const url = window.URL.createObjectURL(blob);
